@@ -33,7 +33,7 @@ public class initializeDriver extends initializeConfiguration
 		
 		if(browser.equals("Chrome"))
 		{
-			URL u = new URL("http://3.108.221.113:4445/wd/hub");
+			URL u = new URL("http://localhost:4445/wd/hub");
 			
 //			ChromeOptions chromeOptions = new ChromeOptions();
 //			chromeOptions.setCapability("browserVersion", "94");
@@ -44,7 +44,6 @@ public class initializeDriver extends initializeConfiguration
 			options.addArguments("start-maximized"); // open Browser in maximized mode
 			options.addArguments("disable-infobars"); // disabling infobars
 			options.addArguments("--disable-extensions"); // disabling extensions
-			options.addArguments("--disable-gpu"); // applicable to windows os only
 			options.addArguments("--headless"); // Bypass OS security model
 			options.addArguments("--no-sandbox");
 			driver = new RemoteWebDriver(u,options);
@@ -56,7 +55,7 @@ public class initializeDriver extends initializeConfiguration
 		
 		else if(browser.equals("Firefox"))
 		{
-			URL u = new URL("http://3.108.221.113:4446/wd/hub");
+			URL u = new URL("http://localhost:4446/wd/hub");
 			
 //			ChromeOptions chromeOptions = new ChromeOptions();
 //			chromeOptions.setCapability("browserVersion", "94");
@@ -67,7 +66,6 @@ public class initializeDriver extends initializeConfiguration
 			options.addArguments("start-maximized"); // open Browser in maximized mode
 			options.addArguments("disable-infobars"); // disabling infobars
 			options.addArguments("--disable-extensions"); // disabling extensions
-			options.addArguments("--disable-gpu"); // applicable to windows os only
 			options.addArguments("--no-sandbox"); // Bypass OS security model
 			options.addArguments("--headless"); // Bypass OS security model
 			driver = new RemoteWebDriver(u,options);
