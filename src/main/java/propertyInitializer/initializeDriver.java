@@ -33,7 +33,7 @@ public class initializeDriver extends initializeConfiguration
 		
 		if(browser.equals("Chrome"))
 		{
-			URL u = new URL("http://localhost:4445/wd/hub");
+			URL u = new URL("http://3.108.221.113:4445/wd/hub");
 			
 //			ChromeOptions chromeOptions = new ChromeOptions();
 //			chromeOptions.setCapability("browserVersion", "94");
@@ -45,7 +45,8 @@ public class initializeDriver extends initializeConfiguration
 			options.addArguments("disable-infobars"); // disabling infobars
 			options.addArguments("--disable-extensions"); // disabling extensions
 			options.addArguments("--disable-gpu"); // applicable to windows os only
-			options.addArguments("--no-sandbox"); // Bypass OS security model
+			options.addArguments("--headless"); // Bypass OS security model
+			options.addArguments("--no-sandbox");
 			driver = new RemoteWebDriver(u,options);
 			
 			//System.setProperty("webdriver.chrome.driver", path+"/drivers/chromedriver.exe");
@@ -55,7 +56,7 @@ public class initializeDriver extends initializeConfiguration
 		
 		else if(browser.equals("Firefox"))
 		{
-			URL u = new URL("http://localhost:4446/wd/hub");
+			URL u = new URL("http://3.108.221.113:4446/wd/hub");
 			
 //			ChromeOptions chromeOptions = new ChromeOptions();
 //			chromeOptions.setCapability("browserVersion", "94");
@@ -68,6 +69,7 @@ public class initializeDriver extends initializeConfiguration
 			options.addArguments("--disable-extensions"); // disabling extensions
 			options.addArguments("--disable-gpu"); // applicable to windows os only
 			options.addArguments("--no-sandbox"); // Bypass OS security model
+			options.addArguments("--headless"); // Bypass OS security model
 			driver = new RemoteWebDriver(u,options);
 			
 			//System.setProperty("webdriver.gecko.driver", path+"/drivers/geckodriver.exe");
