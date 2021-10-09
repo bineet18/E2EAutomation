@@ -32,7 +32,7 @@ public class initializeDriver extends initializeConfiguration
 		
 		if(browser.equals("Chrome"))
 		{
-			URL u = new URL("http://192.168.1.12:4445/wd/hub");
+			URL u = new URL("http://localhost:4445/wd/hub");
 			
 //			ChromeOptions chromeOptions = new ChromeOptions();
 //			chromeOptions.setCapability("browserVersion", "94");
@@ -48,7 +48,7 @@ public class initializeDriver extends initializeConfiguration
 		
 		else if(browser.equals("Firefox"))
 		{
-			URL u = new URL("http://192.168.1.12:4446/wd/hub");
+			URL u = new URL("http://localhost:4446/wd/hub");
 			
 //			ChromeOptions chromeOptions = new ChromeOptions();
 //			chromeOptions.setCapability("browserVersion", "94");
