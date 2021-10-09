@@ -59,14 +59,8 @@ public class AppTest
 	public void afterClass() throws IOException
 	{
 		
-		initializeConfiguration c = new initializeConfiguration(); // Initialize the Configuration File
-		propC = c.returnConfiguration();
-		
-		initializeDriver i= new initializeDriver(); // Initialize the WebDriver
-		driver = i.returnDriver();
-		driver.manage().window().maximize(); // Maximize the Window
-		
-    	driver.get(propC.getProperty("URL"));
+		driver.close();
+		//driver.quit();
 	}
 	
 }

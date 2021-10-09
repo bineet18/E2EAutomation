@@ -5,7 +5,9 @@
     <classes>
       <class name="com.selenium.app.AppTest">
         <methods>
-          <include name="beforeMethod"/>
+          <include name="ClickOnCheckboxes"/>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
           <include name="ClickOnRadioButtons"/>
         </methods>
       </class> <!-- com.selenium.app.AppTest -->

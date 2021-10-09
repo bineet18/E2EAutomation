@@ -1,13 +1,19 @@
 package propertyInitializer;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class initializeDriver extends initializeConfiguration
 {
@@ -19,21 +25,40 @@ public class initializeDriver extends initializeConfiguration
 		this.propC = super.propC;
 	}
 	
-	public WebDriver returnDriver()
+	public WebDriver returnDriver() throws MalformedURLException
 	{
 		browser = propC.getProperty("browser");
 		String path = System.getProperty("user.dir");
 		
 		if(browser.equals("Chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver", path+"/drivers/chromedriver.exe");
-			driver = new ChromeDriver();
+			URL u = new URL("http://192.168.1.12:4445/wd/hub");
+			
+//			ChromeOptions chromeOptions = new ChromeOptions();
+//			chromeOptions.setCapability("browserVersion", "94");
+//			chromeOptions.setCapability("platformName", Platform.WIN10);
+			
+			DesiredCapabilities capability = DesiredCapabilities.chrome();
+			driver = new RemoteWebDriver(u,capability);
+			
+			//System.setProperty("webdriver.chrome.driver", path+"/drivers/chromedriver.exe");
+			//driver = new ChromeDriver();
+			
 		}
 		
-		else if(browser.equals("FIrefox"))
+		else if(browser.equals("Firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver", path+"/drivers/geckodriver.exe");
-			driver = new FirefoxDriver();
+			URL u = new URL("http://192.168.1.12:4446/wd/hub");
+			
+//			ChromeOptions chromeOptions = new ChromeOptions();
+//			chromeOptions.setCapability("browserVersion", "94");
+//			chromeOptions.setCapability("platformName", Platform.WIN10);
+			
+			DesiredCapabilities capability = DesiredCapabilities.firefox();
+			driver = new RemoteWebDriver(u,capability);
+			
+			//System.setProperty("webdriver.gecko.driver", path+"/drivers/geckodriver.exe");
+			//driver = new FirefoxDriver();
 		}
 		else if (browser.equals("edge"))
 		{
