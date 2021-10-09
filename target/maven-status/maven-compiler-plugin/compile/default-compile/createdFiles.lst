@@ -1,0 +1,5 @@
+pageActions\checkbox.class
+propertyInitializer\initializeConfiguration.class
+propertyInitializer\initializeDriver.class
+propertyInitializer\initializeXpath.class
+pageActions\radioButton.class

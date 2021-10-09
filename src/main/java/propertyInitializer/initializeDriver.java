@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -38,8 +39,9 @@ public class initializeDriver extends initializeConfiguration
 //			chromeOptions.setCapability("browserVersion", "94");
 //			chromeOptions.setCapability("platformName", Platform.WIN10);
 			
-			DesiredCapabilities capability = DesiredCapabilities.chrome();
-			driver = new RemoteWebDriver(u,capability);
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
+			driver = new RemoteWebDriver(u,options);
 			
 			//System.setProperty("webdriver.chrome.driver", path+"/drivers/chromedriver.exe");
 			//driver = new ChromeDriver();
@@ -54,8 +56,9 @@ public class initializeDriver extends initializeConfiguration
 //			chromeOptions.setCapability("browserVersion", "94");
 //			chromeOptions.setCapability("platformName", Platform.WIN10);
 			
-			DesiredCapabilities capability = DesiredCapabilities.firefox();
-			driver = new RemoteWebDriver(u,capability);
+			FirefoxOptions options = new FirefoxOptions();
+			options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
+			driver = new RemoteWebDriver(u,options);
 			
 			//System.setProperty("webdriver.gecko.driver", path+"/drivers/geckodriver.exe");
 			//driver = new FirefoxDriver();
