@@ -41,9 +41,9 @@ public class initializeDriver extends initializeConfiguration
 			
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-			options.addArguments("start-maximized"); // open Browser in maximized mode
-			options.addArguments("disable-infobars"); // disabling infobars
-			options.addArguments("--disable-extensions"); // disabling extensions
+			//options.addArguments("start-maximized"); // open Browser in maximized mode
+			//options.addArguments("disable-infobars"); // disabling infobars
+			//options.addArguments("--disable-extensions"); // disabling extensions
 			options.addArguments("--headless"); // Bypass OS security model
 			options.addArguments("--no-sandbox");
 			driver = new RemoteWebDriver(u,options);
