@@ -40,7 +40,12 @@ public class initializeDriver extends initializeConfiguration
 //			chromeOptions.setCapability("platformName", Platform.WIN10);
 			
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
+			options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+			options.addArguments("start-maximized"); // open Browser in maximized mode
+			options.addArguments("disable-infobars"); // disabling infobars
+			options.addArguments("--disable-extensions"); // disabling extensions
+			options.addArguments("--disable-gpu"); // applicable to windows os only
+			options.addArguments("--no-sandbox"); // Bypass OS security model
 			driver = new RemoteWebDriver(u,options);
 			
 			//System.setProperty("webdriver.chrome.driver", path+"/drivers/chromedriver.exe");
@@ -57,7 +62,12 @@ public class initializeDriver extends initializeConfiguration
 //			chromeOptions.setCapability("platformName", Platform.WIN10);
 			
 			FirefoxOptions options = new FirefoxOptions();
-			options.addArguments("--no-sandbox", "--disable-dev-shm-usage");
+			options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+			options.addArguments("start-maximized"); // open Browser in maximized mode
+			options.addArguments("disable-infobars"); // disabling infobars
+			options.addArguments("--disable-extensions"); // disabling extensions
+			options.addArguments("--disable-gpu"); // applicable to windows os only
+			options.addArguments("--no-sandbox"); // Bypass OS security model
 			driver = new RemoteWebDriver(u,options);
 			
 			//System.setProperty("webdriver.gecko.driver", path+"/drivers/geckodriver.exe");
