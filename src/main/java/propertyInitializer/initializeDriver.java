@@ -45,7 +45,7 @@ public class initializeDriver extends initializeConfiguration
 			//options.addArguments("disable-infobars"); // disabling infobars
 			//options.addArguments("--disable-extensions"); // disabling extensions
 			options.addArguments("--headless"); // Bypass OS security model
-			options.addArguments("--no-sandbox");
+//			options.addArguments("--no-sandbox");
 			driver = new RemoteWebDriver(u,options);
 			
 			//System.setProperty("webdriver.chrome.driver", path+"/drivers/chromedriver.exe");
@@ -63,11 +63,11 @@ public class initializeDriver extends initializeConfiguration
 			
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-			options.addArguments("start-maximized"); // open Browser in maximized mode
-			options.addArguments("disable-infobars"); // disabling infobars
-			options.addArguments("--disable-extensions"); // disabling extensions
+//			options.addArguments("start-maximized"); // open Browser in maximized mode
+//			options.addArguments("disable-infobars"); // disabling infobars
+//			options.addArguments("--disable-extensions"); // disabling extensions
 			options.addArguments("--no-sandbox"); // Bypass OS security model
-			options.addArguments("--headless"); // Bypass OS security model
+//			options.addArguments("--headless"); // Bypass OS security model
 			driver = new RemoteWebDriver(u,options);
 			
 			//System.setProperty("webdriver.gecko.driver", path+"/drivers/geckodriver.exe");
