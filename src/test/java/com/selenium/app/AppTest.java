@@ -1,13 +1,10 @@
 package com.selenium.app;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Properties;
-import java.util.TreeMap;
-
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import pageActions.checkbox;
@@ -25,7 +22,7 @@ public class AppTest
 	static WebDriver driver;
 	
 	@BeforeClass
-	public void beforeMethod() throws IOException
+	public void beforeClass() throws IOException
 	{
 		
 		initializeConfiguration c = new initializeConfiguration(); // Initialize the Configuration File
@@ -56,4 +53,20 @@ public class AppTest
     	new checkbox(driver).clickOnCheckbox3();
     	
     }
+    
+    
+	@AfterClass
+	public void afterClass() throws IOException
+	{
+		
+		initializeConfiguration c = new initializeConfiguration(); // Initialize the Configuration File
+		propC = c.returnConfiguration();
+		
+		initializeDriver i= new initializeDriver(); // Initialize the WebDriver
+		driver = i.returnDriver();
+		driver.manage().window().maximize(); // Maximize the Window
+		
+    	driver.get(propC.getProperty("URL"));
+	}
+	
 }
