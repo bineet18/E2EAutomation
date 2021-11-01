@@ -23,6 +23,13 @@ pipeline
         	    sh 'mvn test'
         	}
         }
+        stage('Stop Docker'){
+            steps{
+                sh 'docker-compose down'
+            }
+
+        }
+
     }
 
 }
