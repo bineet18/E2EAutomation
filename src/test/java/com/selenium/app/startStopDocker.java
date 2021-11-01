@@ -36,6 +36,8 @@ public class startStopDocker {
 		}
 
 		proc2.waitFor();
+		
+		Thread.sleep(10000);
 	}
 
 	@AfterTest
