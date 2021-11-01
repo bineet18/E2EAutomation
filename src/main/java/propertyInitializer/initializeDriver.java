@@ -30,7 +30,7 @@ public class initializeDriver extends initializeConfiguration
 		
 		if(browser.equals("Chrome"))
 		{
-			URL u = new URL("http://127.0.0.1:4444/wd/hub");
+			URL u = new URL("http://selenium-hub:4444/wd/hub");
 			
 //			ChromeOptions chromeOptions = new ChromeOptions();
 //			chromeOptions.setCapability("browserVersion", "94");
