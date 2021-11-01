@@ -1,1 +1,9 @@
-com\selenium\app\AppTest.class
+com/selenium/app/AppTest3.class
+com/selenium/app/AppTest6.class
+com/selenium/app/AppTest.class
+com/selenium/app/mainClass.class
+com/selenium/app/AppTest2.class
+utilities/startDockerContainers.class
+com/selenium/app/AppTest5.class
+com/selenium/app/AppTest4.class
+com/selenium/app/startStopDocker.class

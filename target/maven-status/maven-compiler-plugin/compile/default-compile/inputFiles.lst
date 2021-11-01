@@ -1,5 +1,8 @@
-D:\eclipse-workspace\E2ESeleniumAutomation\src\main\java\propertyInitializer\initializeConfiguration.java
-D:\eclipse-workspace\E2ESeleniumAutomation\src\main\java\pageActions\checkbox.java
-D:\eclipse-workspace\E2ESeleniumAutomation\src\main\java\pageActions\radioButton.java
-D:\eclipse-workspace\E2ESeleniumAutomation\src\main\java\propertyInitializer\initializeDriver.java
-D:\eclipse-workspace\E2ESeleniumAutomation\src\main\java\propertyInitializer\initializeXpath.java
+/media/bineet/Data/eclipse-workspace/E2ESeleniumAutomation/src/main/java/pageActions/radioButton.java
+/media/bineet/Data/eclipse-workspace/E2ESeleniumAutomation/src/main/java/propertyInitializer/initializeDriver.java
+/media/bineet/Data/eclipse-workspace/E2ESeleniumAutomation/src/main/java/pageActions/checkbox.java
+/media/bineet/Data/eclipse-workspace/E2ESeleniumAutomation/src/main/java/propertyInitializer/initializeXpath.java
+/media/bineet/Data/eclipse-workspace/E2ESeleniumAutomation/src/main/java/database/connectToMySQL.java
+/media/bineet/Data/eclipse-workspace/E2ESeleniumAutomation/src/main/java/pojo/customerDetails.java
+/media/bineet/Data/eclipse-workspace/E2ESeleniumAutomation/src/main/java/propertyInitializer/initializeConfiguration.java
+/media/bineet/Data/eclipse-workspace/E2ESeleniumAutomation/src/main/java/pojo/convertToJson.java

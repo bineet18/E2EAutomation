@@ -1,5 +1,8 @@
-pageActions\checkbox.class
-propertyInitializer\initializeConfiguration.class
-propertyInitializer\initializeDriver.class
-propertyInitializer\initializeXpath.class
-pageActions\radioButton.class
+database/connectToMySQL.class
+propertyInitializer/initializeDriver.class
+propertyInitializer/initializeXpath.class
+propertyInitializer/initializeConfiguration.class
+pageActions/checkbox.class
+pageActions/radioButton.class
+pojo/convertToJson.class
+pojo/customerDetails.class
