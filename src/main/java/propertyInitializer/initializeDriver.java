@@ -6,12 +6,9 @@ import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -19,7 +16,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class initializeDriver extends initializeConfiguration
 {
 	Properties propC;
-	WebDriver driver;
+	RemoteWebDriver driver;
 	String browser;
 	public initializeDriver() throws IOException
 	{
@@ -33,22 +30,27 @@ public class initializeDriver extends initializeConfiguration
 		
 		if(browser.equals("Chrome"))
 		{
-			URL u = new URL("http://localhost:4445/wd/hub");
+			URL u = new URL("http://localhost:4444/wd/hub");
 			
 //			ChromeOptions chromeOptions = new ChromeOptions();
 //			chromeOptions.setCapability("browserVersion", "94");
 //			chromeOptions.setCapability("platformName", Platform.WIN10);
 			
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE THE VERY FIRST OPTION
-	        options.addArguments("--headless");
-	        options.setExperimentalOption("useAutomationExtension", false);
-	        options.addArguments("start-maximized"); // open Browser in maximized mode
-	        options.addArguments("disable-infobars"); // disabling infobars
-	        options.addArguments("--disable-extensions"); // disabling extensions
-	        //options.addArguments("--disable-gpu"); // applicable to windows os only
-	        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-			driver = new RemoteWebDriver(u,options);
+			/*
+			 * ChromeOptions options = new ChromeOptions();
+			 * options.addArguments("--no-sandbox"); // Bypass OS security model, MUST BE
+			 * THE VERY FIRST OPTION options.addArguments("--headless");
+			 * options.setExperimentalOption("useAutomationExtension", false);
+			 * options.addArguments("start-maximized"); // open Browser in maximized mode
+			 * options.addArguments("disable-infobars"); // disabling infobars
+			 * options.addArguments("--disable-extensions"); // disabling extensions
+			 * //options.addArguments("--disable-gpu"); // applicable to windows os only
+			 * options.addArguments("--disable-dev-shm-usage"); // overcome limited resource
+			 * problems
+			 */			
+			
+			DesiredCapabilities options = DesiredCapabilities.chrome();
+	        driver = new RemoteWebDriver(u,options);
 			
 			//System.setProperty("webdriver.chrome.driver", path+"/drivers/chromedriver.exe");
 			//driver = new ChromeDriver();
@@ -57,7 +59,7 @@ public class initializeDriver extends initializeConfiguration
 		
 		else if(browser.equals("Firefox"))
 		{
-			URL u = new URL("http://localhost:4446/wd/hub");
+			URL u = new URL("http://localhost:4444/wd/hub");
 			
 //			ChromeOptions chromeOptions = new ChromeOptions();
 //			chromeOptions.setCapability("browserVersion", "94");

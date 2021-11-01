@@ -1,0 +1,1 @@
+cd ~/home/bineet/UdemyCourses && doker-compose up
