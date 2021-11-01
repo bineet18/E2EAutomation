@@ -9,6 +9,7 @@
       <class name="com.selenium.app.AppTest4"/>
       <class name="com.selenium.app.AppTest5"/>
       <class name="com.selenium.app.AppTest6"/>
+      <class name="com.selenium.app.startStopDocker"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
