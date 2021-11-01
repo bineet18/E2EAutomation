@@ -54,15 +54,15 @@ public class startStopDocker {
 
 	@AfterTest
 	public void stopDocker() throws IOException, InterruptedException {
-		/*
-		 * String[] command3 = { "/bin/bash", "-c", "docker-compose down" }; Process
-		 * proc3 = new ProcessBuilder(command3).start(); BufferedReader reader = new
-		 * BufferedReader(new InputStreamReader(proc3.getInputStream()));
-		 * 
-		 * String line = ""; while ((line = reader.readLine()) != null) {
-		 * System.out.print(line + "\n"); }
-		 * 
-		 * proc3.waitFor();
-		 */
+		
+		  String[] command3 = { "/bin/bash", "-c", "docker-compose down" }; Process
+		  proc3 = new ProcessBuilder(command3).start(); 
+		  BufferedReader reader = new BufferedReader(new InputStreamReader(proc3.getInputStream()));
+		  
+		  String line = ""; while ((line = reader.readLine()) != null) {
+		  System.out.print(line + "\n"); }
+		  
+		  proc3.waitFor();
+		 
 	}
 }
