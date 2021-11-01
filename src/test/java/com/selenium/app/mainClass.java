@@ -27,25 +27,40 @@ import propertyInitializer.initializeDriver;
 
 public class mainClass {
 
-	public static void main(String[] args) throws ClassNotFoundException, SQLException, StreamWriteException, DatabindException, IOException, InterruptedException {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException, StreamWriteException,
+			DatabindException, IOException, InterruptedException {
 		// TODO Auto-generated method stub
+
+		String[] command1 = { "/usr/bin/xterm", "-e", "docker-compose up -d" };
+		Process proc1 = new ProcessBuilder(command1).start();
+
+		BufferedReader reader = new BufferedReader(new InputStreamReader(proc1.getInputStream()));
+
+		String line = "";
+		while ((line = reader.readLine()) != null) {
+			System.out.print(line + "\n");
+		}
+
+		proc1.waitFor();
+
+		String[] command2 = { "/bin/bash", "-c", "docker-compose scale chrome=5" };
+		Process proc2 = new ProcessBuilder(command2).start();
+
+		reader = new BufferedReader(new InputStreamReader(proc2.getInputStream()));
+
+		line = "";
+		while ((line = reader.readLine()) != null) {
+			System.out.print(line + "\n");
+		}
+
+		proc2.waitFor();
 		
-			
-			  String[] command1 = {"/bin/bash","-c", "docker-compose up -d"}; 
-			  Process proc1 = new ProcessBuilder(command1).start();
-			  proc1.waitFor();
-			  
-			  String[] command2 = {"/bin/bash","-c", "docker-compose scale chrome=5"}; 
-			  Process proc2 = new ProcessBuilder(command2).start();
-			  proc2.waitFor();
-			  
-				
-			  String[] command3 = {"/bin/bash","-c", "docker-compose down"}; 
-			  Process proc3 = new ProcessBuilder(command3).start();
-			  proc3.waitFor();
-				 
-			 		
 		
+
+		/*
+		 * String[] command3 = { "/bin/bash", "-c", "docker-compose down" }; Process
+		 * proc3 = new ProcessBuilder(command3).start(); proc3.waitFor();
+		 */
 		/*
 		 * Properties propC; WebDriver driver;
 		 * 
@@ -70,7 +85,7 @@ public class mainClass {
 		 * 
 		 * driver.close(); driver.quit();
 		 */
-		  
+
 	}
 
 }
