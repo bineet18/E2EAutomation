@@ -30,9 +30,9 @@ public class initializeDriver extends initializeConfiguration
 		
 		if(browser.equals("Chrome"))
 		{
-			URL u = new URL("http://selenium-hub:4444/wd/hub");
+			URL u = new URL("http://192.168.1.11:4444/wd/hub");
 			
-//			ChromeOptions chromeOptions = new ChromeOptions();
+			ChromeOptions chromeOptions = new ChromeOptions();
 //			chromeOptions.setCapability("browserVersion", "94");
 //			chromeOptions.setCapability("platformName", Platform.WIN10);
 			
@@ -49,8 +49,8 @@ public class initializeDriver extends initializeConfiguration
 			 * problems
 			 */			
 			
-			DesiredCapabilities options = DesiredCapabilities.chrome();
-	        driver = new RemoteWebDriver(u,options);
+			//DesiredCapabilities chromeOptions = DesiredCapabilities.chrome();
+	        driver = new RemoteWebDriver(u,chromeOptions);
 			
 			//System.setProperty("webdriver.chrome.driver", path+"/drivers/chromedriver.exe");
 			//driver = new ChromeDriver();
@@ -59,7 +59,7 @@ public class initializeDriver extends initializeConfiguration
 		
 		else if(browser.equals("Firefox"))
 		{
-			URL u = new URL("http://localhost:4444/wd/hub");
+			URL u = new URL("http://192.168.1.11:4444/wd/hub");
 			
 //			ChromeOptions chromeOptions = new ChromeOptions();
 //			chromeOptions.setCapability("browserVersion", "94");
