@@ -38,19 +38,31 @@ public class startStopDocker {
 		proc2.waitFor();
 		
 		Thread.sleep(10000);
+		
+		String[] command3 = { "/bin/bash", "-c", "docker-compose ps" };
+		Process proc3 = new ProcessBuilder(command2).start();
+		
+		reader = new BufferedReader(new InputStreamReader(proc3.getInputStream()));
+
+		line = "";
+		while ((line = reader.readLine()) != null) {
+			System.out.print(line + "\n");
+		}
+
+		proc2.waitFor();
 	}
 
 	@AfterTest
 	public void stopDocker() throws IOException, InterruptedException {
-		String[] command3 = { "/bin/bash", "-c", "docker-compose down" };
-		Process proc3 = new ProcessBuilder(command3).start();
-		BufferedReader reader = new BufferedReader(new InputStreamReader(proc3.getInputStream()));
-
-		String line = "";
-		while ((line = reader.readLine()) != null) {
-			System.out.print(line + "\n");
-		}
-		
-		proc3.waitFor();
+		/*
+		 * String[] command3 = { "/bin/bash", "-c", "docker-compose down" }; Process
+		 * proc3 = new ProcessBuilder(command3).start(); BufferedReader reader = new
+		 * BufferedReader(new InputStreamReader(proc3.getInputStream()));
+		 * 
+		 * String line = ""; while ((line = reader.readLine()) != null) {
+		 * System.out.print(line + "\n"); }
+		 * 
+		 * proc3.waitFor();
+		 */
 	}
 }
